@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: url(Background.png) no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .container {
+      display: flex;
+      width: 100%;
+      height: 100%;
+    }
+
+    .left-section {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      position: relative;
+      animation: slideToLeft 1.5s ease-in-out forwards;
+    }
+
+    .left-section h1 {
+      font-size: 50px;
+      color: white;
+      text-align: center;
+      animation: growText 1.5s ease-in-out;
+    }
+
+    .help-btn {
+      height: 75px;
+      width: 150px;
+      margin-top: 50px;
+      padding: 10px 20px;
+      background-color: white;
+      color: #333;
+      border: none;
+      border-radius: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .help-btn a {
+      color: black;
+      text-decoration: none;
+    }
+    .bhelp-btn {
+      height: 100px;
+      width: 200px;
+      margin-top: 50px;
+      padding: 10px 20px;
+      background-color: white;
+      color: #333;
+      border: none;
+      border-radius: 20px;
+      font-size: 30px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .bhelp-btn a {
+      color: black;
+      text-decoration: none;
+    }
+
+    .right-section {
+      flex: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      align-items: center;
+      color: white;
+      font-size: 30px;
+    }
+
+    .right-section .item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin: 20px;
+      opacity: 0;
+      animation: fadeIn 2s ease-in forwards;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .right-section .item:hover {
+      transform: scale(1.1);
+    }
+
+    .right-section img {
+      width: 300px;
+      height: 200px;
+      border-radius: 12px;
+      margin-bottom: 10px;
+      transition: transform 0.3s ease-in-out;
+    }
+
+    .right-section p {
+      font-size: 24px;
+      color: white;
+      text-align: center;
+    }
+    .DivButton{
+      display: flex;
+      flex-direction: row;
+      gap: 20px;
+    }
+
+    @keyframes slideToLeft {
+      0% {
+        transform: translateX(50%);
+      }
+      100% {
+        transform: translateX(0%);
+      }
+    }
+
+    @keyframes growText {
+      0% {
+        transform: scale(0.5);
+        opacity: 0;
+      }
+      100% {
+        transform: scale(1);
+        opacity: 1;
+      }
+    }
+
+    @keyframes fadeIn {
+      0% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Left Section -->
+    <div class="left-section">
+      <h1>Hello Jainam</h1>
+      <div class="DivButton">
+        <button class="help-btn"><a href="Help.html">Help</a></button>
+        <button class="help-btn"><a href="contries.html">Players</a></button>
+      </div>
+      <button class="bhelp-btn"><a href="BeginerG.html">Beginner Guid</a></button>
+    </div>
+
+    <!-- Right Section -->
+    <div class="right-section">
+      <div class="item">
+        <a href="News.html">
+          <img src="News.png" alt="News">
+        </a>
+        <p>News</p>
+      </div>
+
+      <div class="item">
+        <a href="Game.html">
+          <img src="MyGame.png" alt="Your Games">
+        </a>
+        <p>Your Games</p>
+      </div>
+
+      <div class="item">
+        <a href="LS.html">
+          <img src="Stream.png" alt="Live Stream Games">
+        </a>
+        <p>Live Stream Games</p>
+      </div>
+
+      <div class="item">
+        <a href="Recommodation.html">
+          <img src="Recomdation.png" alt="Recommend Games">
+        </a>
+        <p>Recommend Games</p>
+      </div>
+    </div>
+  </div>
+  <script src="Load.js"></script>
+</body>
+</html>

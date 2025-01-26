@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIFA</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "Poppins", sans-serif;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            background: url(Background.png) no-repeat;
+            background-size: cover;
+            background-position: center;
+            color: #fff;
+            flex-direction: column;
+            padding-top: 70px; /* To avoid the upper div overlapping the content */
+        }
+
+        .upper-div {
+            position: fixed;  /* Fixed position at the top */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 70px;  /* Adjust height for navbar */
+            background-color: rgba(0, 0, 0, 0.5);  /* Semi-transparent background */
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            z-index: 1000;  /* Ensure it stays above other content */
+        }
+
+        #backBtn {
+            background: purple;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+
+        .box-container {
+            background: linear-gradient(to right, green 70%, white 30%);
+            width: 50%;
+            padding: 10px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .box-container h1 {
+            font-size: 20px;
+        }
+
+        .lower-div {
+            display: flex;
+            flex-wrap: wrap;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            width: 100%;
+            height: calc(100vh - 70px); /* Adjust height to fill the rest of the screen */
+            padding: 10px;
+            margin-top: 10px;  /* Add space beneath the navbar */
+        }
+
+        .lower-div div {
+            width: 90%;
+            height: 30%;
+            border: 0.5px solid white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px;
+            transition: all 0.3s ease;
+        }
+
+        .lower-div div:hover {
+            transform: scale(1.1);
+        }
+
+        .lower-div img {
+            width: 650px;
+            height: 150px;
+            border-right: 0.5px solid white;
+        }
+
+        .lower-div h1 {
+            font-size: 50px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        /* Styles for the loading messages */
+        .loading-message {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 50px;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+            animation: fadeInOut 3s ease-in-out;
+            position: fixed;  /* Ensure it's fixed in the center */
+            top: 50%;  /* Vertically center */
+            left: 50%;  /* Horizontally center */
+            transform: translate(-50%, -50%);  /* Adjust position to truly center */
+            z-index: 9999;  /* Ensure it's above other elements */
+        }
+
+        .Gameload{
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Animation for fading in and out the messages */
+        @keyframes fadeInOut {
+            0% {
+                opacity: 0;
+            }
+            50% {
+                opacity: 1;
+            }
+            100% {
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="Gameload">
+        <!-- Upper Div (Navbar) -->
+    <div class="upper-div">
+        <button id="backBtn"><a href="Game.html" style="color: white;">Back</a></button>
+
+        <div class="box-container"></div>
+        <h1>Rest required for 3 hours</h1>
+    </div>
+
+    <!-- Lower Div -->
+    <div class="lower-div">
+        <div>
+            <a href="Fifa.html">
+                <img src="GS.png" alt="Game 1">
+            </a>
+            <h1 style="margin-right: 170px;">Your States</h1>
+        </div>
+
+        <div>
+            <a href="TournamentF.html">
+                <img src="FT.png" alt="Game 2">
+            </a>
+            <h1 style="margin-right: 170px;">Tournaments</h1>
+        </div>
+
+        <div>
+            <a href="FMA.html">
+                <img src="FMA.png" alt="Game 3">
+            </a>
+            <h1>Missions and Achievements</h1>
+        </div>
+    </div>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+    const messages = [
+        "Loading all accounts",
+        "Analyzing last 10 Matches"
+    ];
+
+    let index = 0;
+
+    // Create and show the loading message one by one
+    function showMessage() {
+        if (index < messages.length) {
+            const welcomeDiv = document.createElement("div");
+            welcomeDiv.textContent = messages[index];
+            welcomeDiv.classList.add("loading-message");
+            document.body.appendChild(welcomeDiv);
+
+            // Remove the message after animation
+            setTimeout(() => {
+                welcomeDiv.remove();
+                index++;
+                if (index < messages.length) {
+                    showMessage(); // Continue showing next message
+                } else {
+                    // After all messages, show the content
+                    document.querySelector(".Gameload").style.display = "block";
+                    document.querySelector(".upper-div").style.display = "flex";
+                    document.querySelector(".lower-div").style.display = "flex";
+                }
+            }, 3000);
+        }
+    }
+
+    // Initially hide the content and show loading messages
+    showMessage();
+    document.querySelector(".Gameload").style.display = "none";
+});
+
+    </script>
+    <script src="Load.js"></script>
+</body>
+</html>
