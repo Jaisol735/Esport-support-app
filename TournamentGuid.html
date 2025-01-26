@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tournament Information</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Arial", sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(45deg, #3498db, #8e44ad);
+      color: #fff;
+    }
+
+    .chat-container {
+      width: 90%;
+      max-width: 800px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(9px);
+      padding: 20px;
+    }
+
+    h1 {
+      color: white;
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .content p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+
+    .content p.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .content img{
+        height: 500px;
+        width: 90%;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: purple;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-btn a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+    <button class="back-btn"><a href="Tournament.html">Back</a></button>
+    <div class="chat-container">
+        <h1>BGMI Tournament Information</h1>
+        <div class="content">
+            <p id="players">
+                **Tournament Overview**: The BGMI Esports scene in India is booming, with multiple tournaments happening throughout the year. The BGMI tournaments offer players an opportunity to compete at national and international levels. The major tournaments feature a mix of popular teams from India, as well as global participants.
+            </p>
+    
+            <p id="playtime">
+                **Tournament Start Dates & Details**: The major BGMI tournaments like the BGMI Esports Premier League (BEPL) are scheduled to begin in early 2025. The dates and tournament phases are announced by the respective organizers in advance. Players can participate in online qualifiers, with the best teams moving on to the finals for the chance to win significant prize pools.
+            </p>
+    
+            <p id="criteria">
+                **Eligibility & Criteria**: 
+                - **Age**: Players must be 16 years or older to participate.
+                - **Teams**: You must be part of an officially registered team.
+                - **Ranking**: Players must achieve a certain rank to enter qualifiers, depending on the tournament rules. For example, higher-tier players will be invited to play in the qualifiers directly, while others can participate in open rounds.
+                - **Region**: Players must be from India to enter domestic tournaments, though international events are open to all countries.
+            </p>
+    
+            <p id="upcoming">
+                **Upcoming Tournaments**:
+                - **BGMI Esports Premier League (BEPL) 2025**: 
+                  - **Start Date**: March 2025
+                  - **Prize Pool**: $500,000
+                  - **Format**: Online qualifiers followed by a LAN finale
+                - **BGMI Pro Series 2025**:
+                  - **Start Date**: June 2025
+                  - **Prize Pool**: $250,000
+                  - **Format**: Multiple phases including group stages and playoffs
+            </p>
+    
+            <p id="previous">
+                **Previous Tournaments**: Past events like the BGMI Championship 2024 and BGMI Pro Invitational have set high standards in the competitive scene. These tournaments featured fierce competition, with popular teams like Team SouL and TSM Entity taking home top spots. They showcased exceptional gameplay and also introduced a new wave of esports fans and sponsors in India.
+            </p>
+            <img src="BT1.jpg" alt="BGMI Tournament">
+        </div>
+    </div>    
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const paragraphs = document.querySelectorAll(".content p");
+      
+      function showParagraphs(index = 0) {
+        if (index < paragraphs.length) {
+          setTimeout(() => {
+            paragraphs[index].classList.add('visible');
+            showParagraphs(index + 1);
+          }, 1000);
+        }
+      }
+
+      showParagraphs();
+    });
+  </script>
+  <script src="Load.js"></script>
+</body>
+</html>
