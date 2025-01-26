@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YOUR Stats</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Arial", sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(45deg, #3498db, #8e44ad);
+      color: #fff;
+    }
+
+    .chat-container {
+      width: 90%;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(9px);
+      padding: 20px;
+    }
+
+    h1 {
+      color: white;
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .content p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+
+    .content p.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .content {
+        width: 100%;
+        height: 400px; /* Fixed height for the container */
+        display: flex; /* Use flexbox to layout the parts */
+        justify-content: space-between; /* Add space between the parts */
+        align-items: center; /* Vertically center images and text */
+    }
+    .part {
+        width: 33.33%; /* Each part takes 1/3 of the container width */
+        display: flex;
+        flex-direction: column; /* Stack the image and title vertically */
+        align-items: center; /* Center image and title */
+        justify-content: center; /* Center content vertically */
+    }
+
+    .part img {
+        width: 100%; /* Image takes full width of the part */
+        height: auto; /* Maintain aspect ratio */
+        object-fit: cover; /* Ensure the image fills the space */
+    }
+
+    .part h1 {
+        margin-top: 10px; /* Space between image and title */
+        font-size: 24px;
+        color: white;
+        text-align: center;
+    }
+
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: purple;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-btn a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .claim-rewards {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .claim-rewards a {
+      color: #ff9800;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Typing animation */
+    .typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid;
+  width: 0;
+  animation: typing 4s 1s forwards;
+  text-align: center;
+  width: auto;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCaret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="chat-container">
+    <!-- First div: Back button and EXP Points Remaining -->
+    <div style="position: relative;">
+      <button class="back-btn"><a href="Ingame.html">Back</a></button>
+      <h1 class="typing">EXP Point Remaining = 3</h1>
+    </div>
+
+    <!-- Second div: Images with captions -->
+    <div class="content">
+      <div class="part">
+        <img src="Bgmisolo.png" alt="Image 1">
+        <h1>Solo</h1>
+      </div>
+      <div class="part">
+        <img src="Bgmiduo.png" alt="Image 2">
+        <h1>Duo</h1>
+      </div>
+      <div class="part">
+        <img src="Bgmisquad.png" alt="Image 3">
+        <h1>Squad</h1>
+      </div>
+    </div>
+
+    <!-- Third div: Image and text side by side -->
+    <div class="content-overall">
+      <div style="display: flex; align-items: center;">
+        <img src="Bgmio.png" alt="Image">
+        <p class="typing" style="font-size: 3rem;">Overall rating</p>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!-- Fourth div: Videos with captions -->
+    <div class="content-video">
+      <div style="display: flex; align-items: center; margin-bottom: 20px;">
+        <video src="BG1.mp4" controls autoplay loop width="400"></video>
+        <p class="typing">Athough your aim was not good still your strategy work bang on</p>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
+        <video src="BG2.mp4" controls autoplay loop width="400"></video>
+        <div>
+            <p class="typing">While in Georgo you should never take TPP like this, it can be your game-ending point.</p>
+            <br>
+            <p class="typing">But still, your reflexes were over S rank. Nice work!</p>
+        </div>
+    </div>
+    
+    </div>
+
+    <div class="claim-rewards">
+      <a href="Reward1.html">Claim Rewards</a>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const welcomeDiv = document.createElement("div");
+      welcomeDiv.textContent = "Updating the stats"; 
+      welcomeDiv.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+        font-size: 5rem;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        background: transparent;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        animation: fadeInOutAndGrow 3s ease-in-out;
+        z-index: 1000;
+      `;
+
+      document.body.appendChild(welcomeDiv);
+
+      const style = document.createElement("style");
+      style.textContent = `
+        @keyframes fadeInOutAndGrow {
+          0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+          20% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+          80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+          100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2); }
+        }
+      `;
+      document.head.appendChild(style);
+
+      setTimeout(() => {
+        welcomeDiv.remove();
+        document.querySelector(".chat-container").style.display = "block";
+      }, 3000);
+
+      document.querySelector(".chat-container").style.display = "none";
+    });
+  </script>
+  <script src="Load.js"></script>
+</body>
+</html>
