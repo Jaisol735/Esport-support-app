@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tournaments</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Arial", sans-serif;
+    }
+
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(45deg, #3498db, #8e44ad);
+      color: #fff;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: purple;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-btn a {
+      color: white;
+      text-decoration: none;
+    }
+
+    h1 {
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+      width: 90%;
+    }
+    .tournament{
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 20px;
+        width: 90%;
+    }
+
+    .part {
+      width: 45%;
+      max-width: 300px;
+      border: 0.5px solid rgba(255, 255, 255, 0.5);
+      border-radius: 10px;
+      overflow: hidden;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.6);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .part:hover {
+      transform: scale(1.05);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .part img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .part h1 {
+      margin: 10px 0;
+      font-size: 18px;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back Button -->
+  <button class="back-btn"><a href="Ingame.html">Back</a></button>
+
+  
+  <div class="tournament">
+    <h1>Tournament</h1>
+    <!-- Tournament Content -->
+  <div class="content">
+    <div class="part">
+      <a href="TournamentGuid.html"><img src="BT1.jpg" alt="Tournament 1"></a>
+      <h1>Tournament 1</h1>
+    </div>
+    <div class="part">
+      <img src="BT2.jpg" alt="Tournament 2">
+      <h1>Tournament 2</h1>
+    </div>
+    <div class="part">
+      <img src="BT3.jpg" alt="Tournament 3">
+      <h1>Tournament 3</h1>
+    </div>
+    <div class="part">
+      <img src="BT4.jpg" alt="Tournament 4">
+      <h1>Tournament 4</h1>
+    </div>
+    <div class="part">
+      <img src="BT5.jpg" alt="Tournament 5">
+      <h1>Tournament 5</h1>
+    </div>
+    <div class="part">
+      <img src="BT6.jpg" alt="Tournament 6">
+      <h1>Tournament 6</h1>
+    </div>
+  </div>
+  </div>
+  
+
+  <!-- Welcome Animation Script -->
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const welcomeDiv = document.createElement("div");
+      welcomeDiv.textContent = "Loading Tournament";
+      welcomeDiv.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+        font-size: 3rem;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        background: transparent;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        animation: fadeInOutAndGrow 3s ease-in-out;
+        z-index: 1000;
+      `;
+
+      document.body.appendChild(welcomeDiv);
+
+      const style = document.createElement("style");
+      style.textContent = `
+        @keyframes fadeInOutAndGrow {
+          0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+          20% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+          80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+          100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2); }
+        }
+      `;
+      document.head.appendChild(style);
+
+      setTimeout(() => {
+        welcomeDiv.remove();
+        document.querySelector(".tournament").style.display = "flex";
+      }, 3000);
+
+      document.querySelector(".tournament").style.display = "none";
+    });
+  </script>
+  <script src="Load.js"></script>
+</body>
+</html>

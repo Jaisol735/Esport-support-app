@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BGMI Streams</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: url(Background.png) no-repeat;
+      background-size: cover;
+      background-position: center;
+    }
+
+    .wrapper {
+      width: 80%;
+      background: transparent;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(9px);
+      color: #fff;
+      border-radius: 12px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: purple;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-btn a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .upper {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .left-div {
+      flex: 4;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .left-div video {
+      width: 100%;
+      border-radius: 12px;
+    }
+
+    .right-div {
+      flex: 1;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .right-div h2 {
+      text-align: center;
+      margin-bottom: 15px;
+    }
+
+    .right-div ol {
+      list-style-type: decimal;
+      padding-left: 20px;
+    }
+
+    .right-div ol li {
+      margin: 10px 0;
+      font-size: 18px;
+    }
+
+    .lower {
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .lower p {
+      font-size: 16px;
+      line-height: 1.6;
+      color: #fff;
+      margin-bottom: 10px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+    <button class="back-btn"><a href="LS.html">Back</a></button>
+  <div class="wrapper">
+    <!-- Upper Section -->
+    <div class="upper">
+      <!-- Left Div with Video -->
+      <div class="left-div">
+        <video controls autoplay loop>
+          <source src="Stream.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+
+      <!-- Right Div with Rankings -->
+      <div class="right-div">
+        <h2>Top 5 Teams</h2>
+        <ol>
+          <li>Team Alpha</li>
+          <li>Squad Bravo</li>
+          <li>Delta Warriors</li>
+          <li>Phoenix Rising</li>
+          <li>Shadow Hunters</li>
+        </ol>
+      </div>
+    </div>
+
+    <!-- Lower Section -->
+    <div class="lower">
+      <p><strong>Start Date:</strong> January 15, 2025</p>
+      <p><strong>End Date:</strong> February 10, 2025</p>
+      <p><strong>Prize Pool:</strong> ₹50,00,000</p>
+      <p><strong>Details:</strong> The BGMI Esports Tournament 2025 is one of the largest events in the gaming community, featuring the best teams from across the country. With a prize pool of ₹50,00,000, players will compete in a series of intense matches across different maps and modes.</p>
+      <p><strong>Highlights:</strong></p>
+      <ul>
+        <li>100+ teams participating in qualifiers</li>
+        <li>20 teams progressing to the grand finals</li>
+        <li>Live-streamed on all major platforms including YouTube and Twitch</li>
+        <li>Special commentary and analysis by top gaming influencers</li>
+      </ul>
+      <p>Be sure to tune in and watch the thrilling matches live. Don’t miss your chance to witness history being made in BGMI esports!</p>
+      <div>
+        <h1>Quiz and Rewards</h1>
+        <p>Answer the quiz and win stream points</p>
+        <form>
+          <p>Who will win this tournament</p>
+            <label>
+              <input type="radio" name="team" value="Team Alpha">
+              Team Alpha
+            </label><br>
+            
+            <label>
+              <input type="radio" name="team" value="Squad Bravo">
+              Squad Bravo
+            </label><br>
+            
+            <label>
+              <input type="radio" name="team" value="Delta Warriors">
+              Delta Warriors
+            </label><br>
+            
+            <label>
+              <input type="radio" name="team" value="Phoenix Rising">
+              Phoenix Rising
+            </label><br>
+            
+            <label>
+              <input type="radio" name="team" value="Shadow Hunters">
+              Shadow Hunters
+            </label><br>
+        </form>
+        <p>20 Stream point = 1 EXP Point</p>
+      </div>
+    </div>
+  </div>
+  <script src="Load.js"></script>
+</body>
+</html>

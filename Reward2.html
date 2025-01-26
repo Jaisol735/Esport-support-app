@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EXP Points Exchange</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Arial", sans-serif;
+    }
+
+    body {
+      background: linear-gradient(45deg, #3498db, #8e44ad);
+      color: white;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: purple;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-btn a {
+      color: white;
+      text-decoration: none;
+    }
+
+    h1 {
+      margin-top: 80px;
+      font-size: 28px;
+      text-align: center;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .form-container {
+  width: 80%;
+  height: 80%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 0.5px solid white;
+  border-radius: 10px;
+  padding: 20px;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(9px);
+}
+
+.radio-div {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Aligns content to the left */
+  margin-bottom: 15px;
+  width: 100%;
+  flex: 1;
+}
+
+.radio-div img {
+  height: 150px;
+  width: 200px;
+  margin-right: 20px; /* Space between image and text */
+}
+
+.radio-div input[type="radio"] {
+  margin-right: 10px;
+}
+
+.radio-div label {
+  font-size: 40px;
+}
+
+
+  </style>
+</head>
+<body>
+
+  <!-- Back Button -->
+  <button class="back-btn"><a href="Fifa.html">Back</a></button>
+
+  <!-- EXP Points Remaining -->
+  <h1>EXP Point remaining = 3</h1>
+
+  <!-- Form Container -->
+  <div class="form-container">
+    <div class="radio-div">
+      <input type="radio" id="option1" name="expOption" value="1">
+      <img src="RR.png" alt="RR">
+      <label for="option1">Increase Reload speed</label>
+    </div>
+    <div class="radio-div">
+      <input type="radio" id="option2" name="expOption" value="2">
+      <img src="RC.png" alt="RR">
+      <label for="option2">THE DEFFENDER(Required 30 EXP Point)</label>
+    </div>
+    <div class="radio-div">
+      <input type="radio" id="option3" name="expOption" value="3">
+      <img src="RT.png" alt="RR">
+      <label for="option3">Increase getting rare Players chances</label>
+    </div>
+  </div>
+  <script src="Load.js"></script>
+
+</body>
+</html>

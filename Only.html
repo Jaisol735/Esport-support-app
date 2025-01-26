@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Indian Esports Information</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Arial", sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(45deg, #3498db, #8e44ad);
+      color: #fff;
+    }
+
+    .chat-container {
+      width: 90%;
+      max-width: 800px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(9px);
+      padding: 20px;
+    }
+
+    h1 {
+      color: white;
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .content p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+
+    .content p.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .content img{
+        height: 500px;
+        width: 90%;
+        margin-left: 30px;
+        margin-top: 30px;
+    }
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: purple;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-btn a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+    <button class="back-btn"><a href="EsportIndia.html">Back</a></button>
+  <div class="chat-container">
+    <h1>Indian Esports Information</h1>
+    <div class="content">
+        <p id="players">India has a thriving esports community with over 5 million active players. These enthusiasts regularly participate in tournaments and leagues across various platforms, engaging in popular games like PUBG Mobile, Valorant, Free Fire, and Call of Duty Mobile. The diverse gaming preferences contribute to a rich and dynamic esports ecosystem in India.</p>
+      
+        <p id="playtime">On average, Indian players dedicate 3-4 hours daily to esports games. This commitment extends beyond casual gaming, with many seeing it as a potential career path. The increasing playtime reflects the growing importance of esports in Indian youth culture, with some players even pursuing professional training and joining established esports organizations.</p>
+        
+        <p id="achievements">India's esports achievements have been steadily growing. A significant milestone was winning the Valorant Asia Cup Championship, securing a spot in the global competitive scene. This victory not only celebrated individual talent but also showcased India's potential as a major player in international esports. The success has inspired a new generation of players and increased investment in the Indian esports infrastructure.</p>
+        
+        <p id="upcoming">The esports calendar in India is packed with exciting events. The Esports Premier League (EPL) 2025 stands out with its impressive $500,000 prize pool. This tournament is set to attract top-tier teams globally, putting India on the map as a premier esports destination. Additionally, several regional tournaments are planned, providing opportunities for emerging talents to showcase their skills on a national platform.</p>
+        
+        <p id="previous">Previous tournaments like the Indian Gaming Showdown 2024 have set high standards for esports events in the country. With participation from over 100 teams, these events not only showcase competitive gameplay but also serve as networking platforms for players, sponsors, and esports organizations. The success of past events has led to increased media coverage and sponsorship opportunities, further legitimizing esports as a mainstream entertainment option in India.</p>
+        <img src="IS.png" alt="IS">
+        <h1>Active Users</h1>
+        <img src="IE.png" alt="IE">
+        <h1>Dreamhack</h1>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const paragraphs = document.querySelectorAll(".content p");
+      
+      function showParagraphs(index = 0) {
+        if (index < paragraphs.length) {
+          setTimeout(() => {
+            paragraphs[index].classList.add('visible');
+            showParagraphs(index + 1);
+          }, 1000);
+        }
+      }
+
+      showParagraphs();
+    });
+  </script>
+  <script src="Load.js"></script>
+</body>
+</html>
