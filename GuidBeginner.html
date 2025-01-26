@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Beginner Guid</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Arial", sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(45deg, #3498db, #8e44ad);
+      color: #fff;
+    }
+
+    .chat-container {
+      width: 90%;
+      max-width: 800px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(9px);
+      padding: 20px;
+    }
+
+    h1 {
+      color: white;
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .content p {
+      font-size: 18px;
+      line-height: 1.6;
+      margin-bottom: 20px;
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.5s, transform 0.5s;
+    }
+
+    .content p.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: purple;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-btn a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+    <button class="back-btn"><a href="BeginerG.html">Back</a></button>
+  <div class="chat-container">
+    <h1>Indian Esports Information</h1>
+    <div class="content">
+        <p id="getting-started">
+            **Getting Started in BGMI**: For beginners in Battlegrounds Mobile India (BGMI), the first step is to download the game from the Google Play Store or Apple App Store and create an account. Begin with the training mode to understand controls, shooting mechanics, and movement. Familiarize yourself with maps like Erangel and Livik while playing in Classic Mode to gain experience.
+        </p>
+    
+        <p id="tips"> 
+            **Beginner Tips**: Stick to areas with less intense combat (away from hot-drop zones) while looting essentials like weapons, ammo, and health kits. Communication is key, so play with friends or use in-game voice chat for better coordination in squad matches.
+        </p>
+    
+        <p id="progression">
+            **Leveling Up**: Completing daily missions and events helps you earn rewards, unlock outfits, and level up your RP (Royale Pass). Aim to improve your shooting accuracy, positioning, and map awareness by watching top players or esports tournaments for strategies.
+        </p>
+    
+        <p id="resources">
+            **Resources for Improvement**: Use in-game tutorials and explore BGMI communities on platforms like Discord and YouTube for tips, tricks, and guidance. Consistent practice, patience, and teamwork will ensure steady progress and help you enjoy the competitive BGMI experience.
+        </p>
+    </div>
+    
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const paragraphs = document.querySelectorAll(".content p");
+      
+      function showParagraphs(index = 0) {
+        if (index < paragraphs.length) {
+          setTimeout(() => {
+            paragraphs[index].classList.add('visible');
+            showParagraphs(index + 1);
+          }, 1000);
+        }
+      }
+
+      showParagraphs();
+    });
+  </script>
+  <script src="Load.js"></script>
+</body>
+</html>

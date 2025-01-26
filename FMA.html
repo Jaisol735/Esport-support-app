@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Missions and Achievements</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(45deg, #3498db, #8e44ad);
+      color: #fff;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: purple;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-btn a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .outer-div {
+      display: flex;
+      flex-direction: column;
+      grid-template-rows: repeat(4, 1fr); /* Divides into 4 rows */
+      width: 90%;
+      height: 90%;
+      border: 0.5px solid white;
+      border-radius: 10px;
+      overflow: hidden;
+      background: rgba(0, 0, 0, 0.3);
+    }
+
+    .inner-div {
+        width: 100%;
+        height: 25%;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      border: 0.5px solid rgba(255, 255, 255, 0.5); /* Inner div border */
+      padding: 10px;
+    }
+    .inner-div:hover {
+      transform: scale(1.05); /* Slight zoom effect */
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4); /* Add shadow on hover */
+    }
+
+    .inner-div img {
+      width: 300px;
+      height: 100px;
+      object-fit: cover;
+      margin-right: 20px;
+      border-radius: 10px;
+    }
+
+    .inner-div h1 {
+      font-size: 18px;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Back Button -->
+  <button class="back-btn"><a href="Ingame2.html">Back</a></button>
+
+  <!-- Outer Div -->
+  <div class="outer-div">
+    <h1>Gain a EXP Point for each mission</h1>
+    <div class="inner-div">
+      <img src="FMA1.jpg" alt="Image 1">
+      <h1>Eliminate 100 Enemies in Erangel</h1>
+    </div>
+
+    <!-- Inner Div 2 -->
+    <div class="inner-div">
+      <img src="FMA2.jpg" alt="Image 2">
+      <h1>Survive for 1 hour in Sanhok</h1>
+    </div>
+
+    <!-- Inner Div 3 -->
+    <div class="inner-div">
+      <img src="FMA3.jpg" alt="Image 3">
+      <h1>Revive Teammates 3 Times in Miramar</h1>
+    </div>
+
+    <!-- Inner Div 4 -->
+    <div class="inner-div">
+      <img src="FMA4.jpg" alt="Image 4">
+      <h1>Travel 2000 Meters in a Vehicle</h1>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const welcomeDiv = document.createElement("div");
+      welcomeDiv.textContent = "Loading Missions";
+      welcomeDiv.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+        font-size: 3rem;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        background: transparent;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        animation: fadeInOutAndGrow 3s ease-in-out;
+        z-index: 1000;
+      `;
+
+      document.body.appendChild(welcomeDiv);
+
+      const style = document.createElement("style");
+      style.textContent = `
+        @keyframes fadeInOutAndGrow {
+          0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+          20% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+          80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+          100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2); }
+        }
+      `;
+      document.head.appendChild(style);
+
+      setTimeout(() => {
+        welcomeDiv.remove();
+        document.querySelector(".outer-div").style.display = "flex";
+      }, 3000);
+
+      document.querySelector(".outer-div").style.display = "none";
+    });
+  </script>
+  <script src="Load.js"></script>
+</body>
+</html>
