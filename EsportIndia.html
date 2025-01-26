@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esport India</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      position: relative;
+      background: url('India.png') no-repeat center center fixed;
+      background-size: 100% 100%; /* Ensures the image is fully stretched to fit the viewport */
+      background-position: center center; /* Keeps the image centered */
+    }
+    .back-btn, .Esport {
+      position: absolute;
+      background: purple;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+      z-index: 10; /* Ensures buttons appear above the image */
+    }
+
+    .back-btn a, .Esport a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .back-btn {
+      top: 20px;
+      left: 20px;
+    }
+
+    .Esport {
+      bottom: 70px; /* Adjust this value if necessary */
+      left: 20px;
+    }
+  </style>
+</head>
+<body>
+  <button class="back-btn"><a href="contries.html">Back</a></button>
+  <button class="Esport"><a href="Only.html">Esport</a></button>
+  <script src="Load.js"></script>
+</body>
+</html>

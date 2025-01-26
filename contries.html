@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Countries</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: url(Background.png) no-repeat;
+      background-size: cover;
+      background-position: center;
+      color: #fff;
+    }
+
+    .loading {
+      font-size: 24px;
+      font-weight: bold;
+      text-align: center;
+    }
+
+    .container {
+      display: none; /* Hidden initially */
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      width: 90%;
+    }
+
+    h1 {
+      color: white;
+      font-size: 24px;
+      margin-bottom: 20px;
+    }
+
+    .grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    .country-card {
+      width: 200px;
+      height: 250px;
+      background: rgba(255, 255, 255, 0.1);
+      border: 0.5px solid white;
+      border-radius: 10px;
+      transition: transform 0.3s ease;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      cursor: pointer;
+    }
+
+    .country-card:hover {
+      transform: scale(1.05);
+    }
+
+    .country-card img {
+      width: 80%;
+      border-radius: 10px;
+    }
+
+    .country-card h1 {
+      font-size: 18px;
+      margin-top: 10px;
+    }
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: purple;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-btn a {
+      color: white;
+      text-decoration: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading">Loading the Countries...</div>
+  <button class="back-btn"><a href="home.html">Back</a></button>
+  <div class="container">
+    <h1>Countries</h1>
+    <div class="grid">
+      <!-- Dynamically populated country cards -->
+    </div>
+  </div>
+
+  <script>
+    const countries = [
+      { name: "India", flag_url: "https://flagcdn.com/w320/in.png", link: "india.html" },
+      { name: "South Korea", flag_url: "https://flagcdn.com/w320/kr.png", link: "korea.html" },
+      { name: "United States", flag_url: "https://flagcdn.com/w320/us.png", link: "usa.html" },
+      { name: "China", flag_url: "https://flagcdn.com/w320/cn.png", link: "china.html" },
+      { name: "Japan", flag_url: "https://flagcdn.com/w320/jp.png", link: "japan.html" },
+      { name: "Germany", flag_url: "https://flagcdn.com/w320/de.png", link: "germany.html" }
+    ];
+
+    setTimeout(() => {
+      document.querySelector(".loading").style.display = "none";
+      const container = document.querySelector(".container");
+      container.style.display = "flex";
+
+      const grid = document.querySelector(".grid");
+
+      countries.forEach(country => {
+        const card = document.createElement("div");
+        card.className = "country-card";
+        
+        // Conditionally set the link for India
+        const link = country.name === "India" ? "EsportIndia.html" : country.link;
+
+        card.innerHTML = `
+          <a href="${link}">
+            <img src="${country.flag_url}" alt="${country.name} Flag">
+            <h1>${country.name}</h1>
+          </a>
+        `;
+        grid.appendChild(card);
+      });
+    }, 2000);
+  </script>
+  <script src="Load.js"></script>
+</body>
+</html>

@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Esports UI</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Arial", sans-serif;
+    }
+
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      background: linear-gradient(45deg, #3498db, #8e44ad);
+      color: #fff;
+    }
+
+    .chat-container {
+      width: 90%;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border: 2px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(9px);
+      padding: 20px;
+    }
+
+    h1 {
+      color: white;
+      font-size: 28px;
+      text-align: center;
+      margin-bottom: 20px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: purple;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .back-btn a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .back-btn {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+    }
+
+    .content {
+      display: flex;
+      flex-direction: row;
+    }
+
+    .claim-rewards {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 18px;
+    }
+
+    .claim-rewards a {
+      color: #ff9800;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    /* Typing animation */
+    .typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid;
+  width: 0;
+  animation: typing 4s 1s forwards;
+  text-align: center;
+  width: auto;
+}
+img{
+    margin-top: 30px;
+    width: 500px;
+    height: 300px;
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCaret {
+  50% {
+    border-color: transparent;
+  }
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="chat-container">
+    <!-- First div: Back button and EXP Points Remaining -->
+    <div style="position: relative;">
+      <button class="back-btn"><a href="Ingame2.html">Back</a></button>
+      <h1 class="typing">EXP Point Remaining = 3</h1>
+    </div>
+
+    <!-- Third div: Image and text side by side -->
+    <div class="content-overall">
+        <div style="display: flex; align-items: center;">
+            <img src="FF1.jpg" alt="Image">
+            <p class="typing" style="font-size: 3rem;">Team Overall</p>
+        </div>
+      <div style="display: flex; align-items: center;">
+        <img src="FF2.jpg" alt="Image">
+        <p class="typing" style="font-size: 3rem;">World Rating</p>
+      </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <!-- Fourth div: Videos with captions -->
+    <div class="content-video">
+      <div style="display: flex; align-items: center; margin-bottom: 20px;">
+        <video src="F1.mp4" controls autoplay loop width="400"></video>
+        <div>
+          <p class="typing">One of the best dribbles You have ever done</p>
+          <br>
+          <p class="typing"> Once I was in front of the goal and saw that no wing options were available </p>
+          <br>
+          <p>YOU thought of just trying to  dribble past the defenders by making them commit to a tackle </p>
+          <br>
+          <p> then put the ball in the back of the net</p>
+      </div>
+      </div>
+      <div style="display: flex; align-items: center; justify-content: flex-start; gap: 20px;">
+        <video src="F2.mp4" controls autoplay loop width="400"></video>
+        <div>
+            <p class="typing">Seeing the winger's pass, you knew there was no time to control or turn</p>
+            <br>
+            <p class="typing"> so you creatively attempted a backheel toward the bottom corner—and it paid off.</p>
+        </div>
+    </div>
+    
+    </div>
+
+    <div class="claim-rewards">
+      <a href="Reward2.html">Claim Rewards</a>
+    </div>
+  </div>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      const welcomeDiv = document.createElement("div");
+      welcomeDiv.textContent = "Updating the stats"; 
+      welcomeDiv.style.cssText = `
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%) scale(0.5);
+        font-size: 5rem;
+        font-weight: bold;
+        text-align: center;
+        color: white;
+        background: transparent;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        animation: fadeInOutAndGrow 3s ease-in-out;
+        z-index: 1000;
+      `;
+
+      document.body.appendChild(welcomeDiv);
+
+      const style = document.createElement("style");
+      style.textContent = `
+        @keyframes fadeInOutAndGrow {
+          0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
+          20% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+          80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+          100% { opacity: 0; transform: translate(-50%, -50%) scale(1.2); }
+        }
+      `;
+      document.head.appendChild(style);
+
+      setTimeout(() => {
+        welcomeDiv.remove();
+        document.querySelector(".chat-container").style.display = "block";
+      }, 3000);
+
+      document.querySelector(".chat-container").style.display = "none";
+    });
+  </script>
+  <script src="Load.js"></script>
+</body>
+</html>
